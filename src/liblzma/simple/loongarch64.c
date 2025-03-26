@@ -15,28 +15,8 @@ loongarch64_code(void *simple lzma_attribute((__unused__)),
         uint32_t pc = (uint32_t)(now_pos+i);
         uint32_t instr = read32le(buffer+i);
 
-        if((instr >> 25) == 0x0A)
+        if((instr >> 26) == 0x15)
         {
-            //LU12I.W
-            uint32_t oprd = instr&0xFE00001F;
-            uint32_t offset = (instr&0x01FFFFE0)<<7;
-
-            pc &= 0xFFFFF000;
-            if(!is_encoder)
-            {
-                pc = 0U-pc;
-            }
-
-            uint32_t addr = offset+pc;
-
-            addr >>= 7;
-            oprd |= (addr)&0x01FFFFE0;
-            
-            write32le(buffer+i, oprd);
-        }else if((instr >> 26) == 0x14
-                || (instr >> 26) == 0x15)
-        {
-            //B
             //BL
             uint32_t oprd = instr&0xFC000000;
             uint32_t offset = (instr&0x000003FF)<<16;
