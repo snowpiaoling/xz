@@ -112,6 +112,15 @@ static const struct {
 		.changes_size = false,
 	},
 #endif
+#if defined(HAVE_ENCODER_LOONGARCH64) || defined(HAVE_DECODER_LOONGARCH64)
+	{
+		.id = LZMA_FILTER_LOONGARCH64,
+		.options_size = sizeof(lzma_options_bcj),
+		.non_last_ok = true,
+		.last_ok = false,
+		.changes_size = false,
+	},
+#endif
 #if defined(HAVE_ENCODER_SPARC) || defined(HAVE_DECODER_SPARC)
 	{
 		.id = LZMA_FILTER_SPARC,

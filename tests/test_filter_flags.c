@@ -41,6 +41,9 @@ static lzma_filter bcj_filters_encoders[] = {
 #ifdef HAVE_ENCODER_ARM64
 	{ LZMA_FILTER_ARM64, NULL },
 #endif
+#ifdef HAVE_ENCODER_LOONGARCH64
+	{ LZMA_FILTER_LOONGARCH64, NULL },
+#endif
 #ifdef HAVE_ENCODER_ARMTHUMB
 	{ LZMA_FILTER_ARMTHUMB, NULL },
 #endif
@@ -73,6 +76,9 @@ static lzma_filter bcj_filters_decoders[] = {
 #endif
 #ifdef HAVE_DECODER_ARM64
 	{ LZMA_FILTER_ARM64, NULL },
+#endif
+#ifdef HAVE_DECODER_LOONGARCH64
+	{ LZMA_FILTER_LOONGARCH64, NULL },
 #endif
 #ifdef HAVE_DECODER_ARMTHUMB
 	{ LZMA_FILTER_ARMTHUMB, NULL },

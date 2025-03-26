@@ -492,7 +492,7 @@ test_lzma_str_from_filters(void)
 }
 
 
-static const char supported_encoders[][9] = {
+static const char supported_encoders[][12] = {
 	"lzma2",
 #ifdef HAVE_ENCODER_X86
 	"x86",
@@ -515,6 +515,9 @@ static const char supported_encoders[][9] = {
 #ifdef HAVE_ENCODER_ARM64
 	"arm64",
 #endif
+#ifdef HAVE_ENCODER_LOONGARCH64
+	"loongarch64",
+#endif
 #ifdef HAVE_ENCODER_RISCV
 	"riscv",
 #endif
@@ -523,7 +526,7 @@ static const char supported_encoders[][9] = {
 #endif
 };
 
-static const char supported_decoders[][9] = {
+static const char supported_decoders[][12] = {
 	"lzma2",
 #ifdef HAVE_DECODER_X86
 	"x86",
@@ -546,6 +549,9 @@ static const char supported_decoders[][9] = {
 #ifdef HAVE_DECODER_ARM64
 	"arm64",
 #endif
+#ifdef HAVE_DECODER_LOONGARCH64
+	"loongarch64",
+#endif
 #ifdef HAVE_DECODER_RISCV
 	"riscv",
 #endif
@@ -554,7 +560,7 @@ static const char supported_decoders[][9] = {
 #endif
 };
 
-static const char supported_filters[][9] = {
+static const char supported_filters[][12] = {
 	"lzma2",
 #if defined(HAVE_ENCODER_X86) || defined(HAVE_DECODER_X86)
 	"x86",
@@ -576,6 +582,9 @@ static const char supported_filters[][9] = {
 #endif
 #if defined(HAVE_ENCODER_ARM64) || defined(HAVE_DECODER_ARM64)
 	"arm64",
+#endif
+#if defined(HAVE_ENCODER_LOONGARCH64) || defined(HAVE_DECODER_LOONGARCH64)
+	"loongarch64",
 #endif
 #if defined(HAVE_ENCODER_RISCV) || defined(HAVE_DECODER_RISCV)
 	"riscv",

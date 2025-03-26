@@ -571,6 +571,15 @@ parse_block_header(file_pair *pair, const lzma_index_iter *iter,
 		}
 	}
 
+	if (xfi->min_version < 50040002U) {
+		for (size_t i = 0; filters[i].id != LZMA_VLI_UNKNOWN; ++i) {
+			if (filters[i].id == LZMA_FILTER_LOONGARCH64) {
+				xfi->min_version = 50040002U;
+				break;
+			}
+		}
+	}
+
 	if (xfi->min_version < 50000022U) {
 		size_t i = 0;
 		while (filters[i + 1].id != LZMA_VLI_UNKNOWN)

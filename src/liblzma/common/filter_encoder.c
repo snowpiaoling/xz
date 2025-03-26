@@ -148,6 +148,16 @@ static const lzma_filter_encoder encoders[] = {
 		.props_encode = &lzma_simple_props_encode,
 	},
 #endif
+#ifdef HAVE_ENCODER_LOONGARCH64
+	{
+		.id = LZMA_FILTER_LOONGARCH64,
+		.init = &lzma_simple_loongarch64_encoder_init,
+		.memusage = NULL,
+		.block_size = NULL,
+		.props_size_get = &lzma_simple_props_size,
+		.props_encode = &lzma_simple_props_encode,
+	},
+#endif
 #ifdef HAVE_ENCODER_SPARC
 	{
 		.id = LZMA_FILTER_SPARC,

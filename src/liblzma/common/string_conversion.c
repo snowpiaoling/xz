@@ -251,6 +251,8 @@ static const char *parse_options(const char **const str, const char *str_end,
 		|| defined(HAVE_DECODER_ARMTHUMB) \
 		|| defined(HAVE_ENCODER_ARM64) \
 		|| defined(HAVE_DECODER_ARM64) \
+		|| defined(HAVE_ENCODER_LOONGARCH64) \
+		|| defined(HAVE_DECODER_LOONGARCH64) \
 		|| defined(HAVE_ENCODER_POWERPC) \
 		|| defined(HAVE_DECODER_POWERPC) \
 		|| defined(HAVE_ENCODER_IA64) \
@@ -518,6 +520,11 @@ static const struct {
 
 #if defined(HAVE_ENCODER_ARM64) || defined(HAVE_DECODER_ARM64)
 	{ "arm64",        sizeof(lzma_options_bcj),   LZMA_FILTER_ARM64,
+	  &parse_bcj,     bcj_optmap, 1, 1, true },
+#endif
+
+#if defined(HAVE_ENCODER_LOONGARCH64) || defined(HAVE_DECODER_LOONGARCH64)
+	{ "loongarch64",  sizeof(lzma_options_bcj),   LZMA_FILTER_LOONGARCH64,
 	  &parse_bcj,     bcj_optmap, 1, 1, true },
 #endif
 

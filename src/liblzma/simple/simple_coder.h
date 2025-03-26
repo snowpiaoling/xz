@@ -69,6 +69,15 @@ extern lzma_ret lzma_simple_arm64_decoder_init(lzma_next_coder *next,
 		const lzma_filter_info *filters);
 
 
+extern lzma_ret lzma_simple_loongarch64_encoder_init(lzma_next_coder *next,
+		const lzma_allocator *allocator,
+		const lzma_filter_info *filters);
+
+extern lzma_ret lzma_simple_loongarch64_decoder_init(lzma_next_coder *next,
+		const lzma_allocator *allocator,
+		const lzma_filter_info *filters);
+
+
 extern lzma_ret lzma_simple_sparc_encoder_init(lzma_next_coder *next,
 		const lzma_allocator *allocator,
 		const lzma_filter_info *filters);

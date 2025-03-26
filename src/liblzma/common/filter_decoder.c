@@ -112,6 +112,14 @@ static const lzma_filter_decoder decoders[] = {
 		.props_decode = &lzma_simple_props_decode,
 	},
 #endif
+#ifdef HAVE_DECODER_LOONGARCH64
+	{
+		.id = LZMA_FILTER_LOONGARCH64,
+		.init = &lzma_simple_loongarch64_decoder_init,
+		.memusage = NULL,
+		.props_decode = &lzma_simple_props_decode,
+	},
+#endif
 #ifdef HAVE_DECODER_SPARC
 	{
 		.id = LZMA_FILTER_SPARC,

@@ -1189,6 +1189,7 @@ message_help(bool long_help)
 			"--arm[=%s]\v%s\r"
 			"--armthumb[=%s]\v%s\r"
 			"--arm64[=%s]\v%s\r"
+			"--loongarch64[=%s]\v%s\r"
 			"--powerpc[=%s]\v%s\r"
 			"--ia64[=%s]\v%s\r"
 			"--sparc[=%s]\v%s\r"
@@ -1202,6 +1203,8 @@ message_help(bool long_help)
 			W_("ARM-Thumb BCJ filter"),
 			_("OPTS"),
 			W_("ARM64 BCJ filter"),
+			_("OPTS"),
+			W_("LOONGARCH64 BCJ filter"),
 			_("OPTS"),
 			W_("PowerPC BCJ filter (big endian only)"),
 			_("OPTS"),

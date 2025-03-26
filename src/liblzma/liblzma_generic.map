@@ -131,6 +131,8 @@ XZ_5.8 {
 global:
 	lzma_bcj_arm64_encode;
 	lzma_bcj_arm64_decode;
+	lzma_bcj_loongarch64_encode;
+	lzma_bcj_loongarch64_decode;
 	lzma_bcj_riscv_encode;
 	lzma_bcj_riscv_decode;
 	lzma_bcj_x86_encode;

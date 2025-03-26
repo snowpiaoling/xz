@@ -57,6 +57,11 @@
  */
 #define LZMA_FILTER_RISCV       LZMA_VLI_C(0x0B)
 
+/**
+ * \brief       Filter for LOONGARCH64 binaries
+ */
+#define LZMA_FILTER_LOONGARCH64 LZMA_VLI_C(0x0C)
+
 
 /**
  * \brief       Options for BCJ filters
@@ -130,6 +135,37 @@ extern LZMA_API(size_t) lzma_bcj_arm64_encode(
  * \since       5.7.1alpha
  */
 extern LZMA_API(size_t) lzma_bcj_arm64_decode(
+		uint32_t start_offset, uint8_t *buf, size_t size) lzma_nothrow;
+
+
+/**
+ * \brief       Raw LOONGARCH64 BCJ encoder
+ *
+ * This is for special use cases only.
+ *
+ * \param       start_offset  The lowest 32 bits of the offset in the
+ *                            executable being filtered. For the LOONGARCH64
+ *                            filter, this must be a multiple of four.
+ * \param       buf           Buffer to be filtered in place
+ * \param       size          Size of the buffer
+ *
+ * \return      Number of bytes that were processed in `buf`. This is at most
+ *              `size`. With the LOONGARCH64 filter, the return value is always
+ *              a multiple of 4, and at most 3 bytes are left unfiltered.
+ *
+ * \since       5.7.1alpha
+ */
+extern LZMA_API(size_t) lzma_bcj_loongarch64_encode(
+		uint32_t start_offset, uint8_t *buf, size_t size) lzma_nothrow;
+
+/**
+ * \brief       Raw LOONGARCH64 BCJ decoder
+ *
+ * See lzma_bcj_loongarch64_encode().
+ *
+ * \since       5.7.1alpha
+ */
+extern LZMA_API(size_t) lzma_bcj_loongarch64_decode(
 		uint32_t start_offset, uint8_t *buf, size_t size) lzma_nothrow;
 
 

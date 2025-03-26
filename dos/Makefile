@@ -99,6 +99,7 @@ SRCS_C = \
 	../src/liblzma/rangecoder/price_table.c \
 	../src/liblzma/simple/arm.c \
 	../src/liblzma/simple/arm64.c \
+	../src/liblzma/simple/loongarch64.c \
 	../src/liblzma/simple/armthumb.c \
 	../src/liblzma/simple/ia64.c \
 	../src/liblzma/simple/powerpc.c \

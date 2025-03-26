@@ -24,6 +24,9 @@
 /* Define to 1 if arm64 decoder is enabled. */
 #define HAVE_DECODER_ARM64 1
 
+/* Define to 1 if loongarch64 decoder is enabled. */
+#define HAVE_DECODER_LOONGARCH64 1
+
 /* Define to 1 if armthumb decoder is enabled. */
 #define HAVE_DECODER_ARMTHUMB 1
 
@@ -56,6 +59,9 @@
 
 /* Define to 1 if arm64 encoder is enabled. */
 #define HAVE_ENCODER_ARM64 1
+
+/* Define to 1 if loongarch64 encoder is enabled. */
+#define HAVE_ENCODER_LOONGARCH64 1
 
 /* Define to 1 if armthumb encoder is enabled. */
 #define HAVE_ENCODER_ARMTHUMB 1
